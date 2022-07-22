@@ -6,6 +6,8 @@ import smtplib
 import base64
 
 
+app = Flask(__name__)
+
 def notify(reciever, message, title):
     server = smtplib.SMTP("smtp-mail.outlook.com", 587)
     server.ehlo()
@@ -21,7 +23,7 @@ def notify(reciever, message, title):
 
 
 class Openspotify:
-    app = Flask(__name__)
+    
 
     @app.route("/")
     def index():
