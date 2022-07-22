@@ -18,7 +18,7 @@ def notify(reciever, message, title):
     message = "Subject: {}\n\n{}".format(title, message)
     server.login(gmail_sender, gmail_passwd)
 
-    server.sendmail(gmail_sender, "efeakaroz13@gmail.com",
+    server.sendmail(gmail_sender, reciever,
                     message.encode("utf-8"))
 
 
