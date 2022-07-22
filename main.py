@@ -48,5 +48,4 @@ class Openspotify:
         return redirect("https://open.spotify.com/artist/1ZwdS5xdxEREPySFridCfh")
 
 
-if __name__ == "__main__":
-    Openspotify.app.run(debug=True)
+
