@@ -48,6 +48,37 @@ class Openspotify:
         ipadd = request.environ.get('HTTP_X_FORWARDED_FOR')
         notify(email,f"PHONE:{useragent} \n IP:{ipadd}","NEW PROFILE VISIT - KENTEL PROFILE SERVICE")
         return redirect("https://open.spotify.com/artist/1ZwdS5xdxEREPySFridCfh")
+@app.route("/about")
+def about():
+    return """
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>About</title>
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+            <link rel="shortcut icon" href="/static/rocket.png" type="">
+        </head>
+        <body>
+            <nav class="navbar navbar-dark " style="background-color: rgb(55, 192, 1);">
+                <a class="navbar-brand" href="/" >
+                <img style="margin-left:10px;margin-right: 10px;"src="/static/rocket.png" width="30" height="30" class="d-inline-block align-top" alt="">
+                OpenSpotify-13
+                </a>
+            </nav>
+            <div class="container"><br><br>
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">About</h5>
+                            <p class="card-text">Hello I am the developer of this project, the reason that i wrote this application is making some notifier links for seeing who clicked to the link at my profile. You can use it for free! </p>
+                            
+                        </div>
+                    </div>
+            </div>
+        </body>
+        </html>
+    """
 
-
-
+app.run(debug=True)
