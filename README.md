@@ -12,6 +12,7 @@ Open the [website](https://openspotify13.herokuapp.com) and click to generate li
 
 ## Cons
 The email at the url is visible but we will hide it at future updates!
+
 Every link redirects to 2Pac's Spotify profile.
 ## Solved Problems and Bugs
 ### Homepage 
