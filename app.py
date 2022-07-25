@@ -81,4 +81,38 @@ def about():
         </html>
     """
 
-
+@app.route("/generate")
+def generate():
+    return """
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <script src="/static/generate.js"></script>
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Generate A link - Openspotify-13</title>
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+            <link rel="shortcut icon" href="/static/rocket.png" type="">
+        </head>
+        <body>
+            <nav class="navbar navbar-dark " style="background-color: rgb(55, 192, 1);">
+                <a class="navbar-brand" href="/" >
+                <img style="margin-left:10px;margin-right: 10px;"src="/static/rocket.png" width="30" height="30" class="d-inline-block align-top" alt="">
+                OpenSpotify-13
+                </a>
+            </nav>
+            <div class="container"><br><br>
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Link generator</h5>
+                            <input type="email" id="email" placeholder="Email..." style="width:80%;"><a onclick="copy()" style="background:none;border:0px;margin-left:10px;display:none;" id="copier">Copy!</a><br>
+                            <button class="btn btn-primary" style="background:rgb(55, 192, 1)" onclick="generate()" id="genbtn">Generate!</button><br><br>
+                            <a href="https://www.buymeacoffee.com/efeakaroz13" style="text-decoration: none; color:brown">Buy me a coffee ☕</a>
+                        </div>
+                    </div>
+            </div>
+        </body>
+        </html>
+    """
+    
